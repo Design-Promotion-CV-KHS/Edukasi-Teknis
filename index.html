@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Traktor | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .home-container {
+            margin: auto;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            border-bottom: 4px solid var(--primary);
+        }
+    </style>
+</head>
+
+<body style="background: var(--primary);">
+    <div class="home-container">
+        <img src="edit_logo_Quicksaja (Putih).png" alt="Quick Logo"
+            style="width: 150px; margin-bottom: 20px;">
+        <h1 style="font-family:'Montserrat'; color: #ffffff;">Selamat Datang di Portal Edukasi</h1>
+        <p style="color: #ffffff; margin-top: 10px;">Pusat informasi dan instruksi teknis resmi CV Karya Hidup Sentosa
+            untuk operasional alat mesin pertanian unggulan.</p>
+
+        <div class="feature-grid">
+            <div class="card">
+                <i data-lucide="play-circle" color="#000000"></i>
+                <h4 style="margin-top:10px; color: #000000">Tutorial Video</h4>
+                <p style="font-size: 0.8rem; color: #000000">Panduan visual mendalam dari tenaga ahli.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="book-open" color="#000000"></i>
+                <h4 style="margin-top:10px; color: #000000">Materi Teknis</h4>
+                <p style="font-size: 0.8rem; color: #000000">SOP dan standar maintenance berkala.</p>
+            </div>
+        </div>
+
+        <a href="Dashboard.html"
+            style="display:inline-block; margin-top: 40px; background: #ffffff; color: var(--primary); padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600;">
+            Masuk ke Dashboard
+        </a>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Quick Academy | Video Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="mobile-header">
+        <div class="mobile-logo">
+            <i data-lucide="graduation-cap" size="24"></i>
+            <span>MODUL EDUKASI TEKNIS</span>
+        </div>
+        <button onclick="toggleSidebar()" class="menu-trigger-btn">
+            <i data-lucide="menu" size="28"></i>
+        </button>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="icon-box-header">
+                <i data-lucide="graduation-cap" size="18"></i>
+            </div>
+            <h2>MODUL EDUKASI TEKNIS</h2>
+        </div>
+
+        <nav class="nav-container">
+            <div class="module-group"
+                style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2);">
+                <a href="index.html" class="module-trigger-link" style="text-decoration: none;">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <div class="icon-box" style="background: #ef4444;"><i data-lucide="log-out" size="16"
+                                color="white"></i></div>
+                        <span style="font-size:0.85rem; color: #ef4444; font-weight: 600;">Keluar Sesi</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="module-group">
+                <button class="module-trigger" onclick="toggleGroup(this)">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <div class="icon-box"><i data-lucide="box" size="16"></i></div>
+                        <span style="font-size:0.85rem">Boxer Rotary</span>
+                    </div>
+                    <i data-lucide="chevron-down" size="12"></i>
+                </button>
+                <div class="video-list">
+                    <div class="video-btn"
+                        onclick="loadVideo(this, 'unjV4RHFQoY', 'Boxer Rotary', 'Teknik Guludan Rapi')">Teknik Guludan
+                    </div>
+                    <div class="video-btn" onclick="loadVideo(this, 'dQw4w9WgXcQ', 'Maintenance', 'Pengecekan Mesin')">
+                        Pengecekan Mesin</div>
+                </div>
+            </div>
+
+            <div class="module-group">
+                <button class="module-trigger" onclick="toggleGroup(this)">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <div class="icon-box"><i data-lucide="tractor" size="16"></i></div>
+                        <span style="font-size:0.85rem">Cakar Baja</span>
+                    </div>
+                    <i data-lucide="chevron-down" size="12"></i>
+                </button>
+                <div class="video-list">
+                    <div class="video-btn" onclick="loadVideo(this, 'O_v2MhU5Zpk', 'Cakar Baja', 'Demo Penggunaan')">
+                        Demo Penggunaan</div>
+                </div>
+            </div>
+
+            <div class="module-group">
+                <button class="module-trigger" onclick="toggleGroup(this)">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <div class="icon-box"><i data-lucide="tractor" size="16"></i></div>
+                        <span style="font-size:0.85rem">Kasuari</span>
+                    </div>
+                    <i data-lucide="chevron-down" size="12"></i>
+                </button>
+                <div class="video-list">
+                    <div class="video-btn" onclick="loadVideo(this, 'O_v2MhU5Zpk', 'Cakar Baja', 'Demo Penggunaan')">
+                        Demo Penggunaan</div>
+                </div>
+            </div>
+
+            <div class="module-group">
+                <button class="module-trigger" onclick="toggleGroup(this)">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <div class="icon-box"><i data-lucide="tractor" size="16"></i></div>
+                        <span style="font-size:0.85rem">Amberjack Rotary</span>
+                    </div>
+                    <i data-lucide="chevron-down" size="12"></i>
+                </button>
+                <div class="video-list">
+                    <div class="video-btn" onclick="loadVideo(this, 'O_v2MhU5Zpk', 'Cakar Baja', 'Demo Penggunaan')">
+                        Demo Penggunaan</div>
+                </div>
+            </div>
+
+            <div class="module-group">
+                <button class="module-trigger" onclick="toggleGroup(this)">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <div class="icon-box"><i data-lucide="tractor" size="16"></i></div>
+                        <span style="font-size:0.85rem">Amberjack Mower</span>
+                    </div>
+                    <i data-lucide="chevron-down" size="12"></i>
+                </button>
+                <div class="video-list">
+                    <div class="video-btn" onclick="loadVideo(this, 'O_v2MhU5Zpk', 'Cakar Baja', 'Demo Penggunaan')">
+                        Demo Penggunaan</div>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div id="video-view" style="display: block; width: 100%; max-width: 900px; margin: 0 auto;">
+            <span id="vSub">Pilih Modul</span>
+            <h1 id="vTitle">Silakan pilih video tutorial</h1>
+
+            <div class="video-player-box">
+                <iframe id="vidFrame" src="" allowfullscreen style="background: #1e293b;"></iframe>
+            </div>
+
+            <div class="info-card">
+                <strong>💡 Instruksi:</strong> Klik salah satu modul di sebelah kiri untuk memulai pembelajaran teknis
+                unit Quick Traktor.
+            </div>
+        </div>
+
+        <a href="https://wa.me/628112930303" class="wa-contact" target="_blank">
+            <i data-lucide="message-circle" size="24"></i>
+            <span>Call Center Quick</span>
+        </a>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('show'); }
+        function toggleGroup(btn) {
+            const group = btn.parentElement;
+            const isActive = group.classList.contains('active');
+            document.querySelectorAll('.module-group').forEach(m => m.classList.remove('active'));
+            if (!isActive) group.classList.add('active');
+        }
+        function loadVideo(btn, id, sub, title) {
+            document.getElementById('vidFrame').src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0";
+            document.getElementById('vSub').innerText = sub;
+            document.getElementById('vTitle').innerText = title;
+            document.querySelectorAll('.video-btn').forEach(v => v.classList.remove('active'));
+            btn.classList.add('active');
+            if (window.innerWidth <= 768) toggleSidebar();
+        }
+    </script>
+</body>
+
+</html>
